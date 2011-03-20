@@ -10,20 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110320200322) do
+ActiveRecord::Schema.define(:version => 20110320232604) do
 
-	create_table "github_projects", :force => true do |t|
-		t.string 	"url"
-		t.datetime "created_at"
-		t.datetime "updated_at"
-	end
+  create_table "github_projects", :force => true do |t|
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
-	create_table "yammer_posts", :force => true do |t|
-		t.string 	"yammer_id"
-		t.string 	"user"
-		t.integer	"github_projects_id"
-		t.datetime "created_at"
-		t.datetime "updated_at"
-	end
+  create_table "yammer_posts", :force => true do |t|
+    t.string   "yammer_id"
+    t.string   "user"
+    t.integer  "github_project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
