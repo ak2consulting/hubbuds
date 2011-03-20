@@ -1,4 +1,5 @@
 Hubbuds::Application.routes.draw do
+	root :to => 'github_projects#index' 
 	resources :github_projects
 
 	post "github_projects/push_update"
