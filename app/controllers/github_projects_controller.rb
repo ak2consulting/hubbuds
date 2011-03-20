@@ -1,27 +1,17 @@
 class GithubProjectsController < ApplicationController
 	#POST /push_update
 	def push_update
+		puts "got into update, payload= #{params[:payload]}"
 		the_update = JSON.parse params[:payload]
 		
-		@github_project = GithubProject.find_by_url payload['repository']['url']
+		@github_project = GithubProject.find_by_url the_update['repository']['url']
 		#what to do if github project not found?
 		
 		#lovingly stolen from https://github.com/github/github-services/blob/master/services/yammer.rb
-		#TODO: LINK BACK HERE
-		repository = payload['repository']['name']
-		statuses=[]
-		if data['digest'] == '1'
-			commit = payload['commits'][-1]
-			statuses << "@#{commit['author']['name']} pushed #{payload['commits'].length}.to {repository}. check it out at <todo: link>"
-		else
-			payload['commits'].each do |commit|
-				statuses << "@#{commit['author']['name']} updated #{repository}: \"#{commit['message']}\". check it out at <todo: link>"
-			end
-		end
-		
-		
 		yammer = Yammer::Client.new(:config=>$yammer_config)
-		statuses.each do |status| 
+		the_update['commits'].each do |commit|
+			#TODO: LINK BACK HERE
+			body="@#{commit['author']['name']} updated #{the_update['repository']['name']}: \"#{commit['message']}\". check it out at <todo: link>"
 			resp=yammer.message(:post, :body => status)
 			#error catch, maybe?
 			posted_message = JSON.parse resp.body
