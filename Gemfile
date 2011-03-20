@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'hubruby', :git=>"https://github.com/diogenes/hubruby.git"
 gem 'yammer4r'
+gem 'compass'
+gem 'haml'
 
 # Use unicorn as the web server
 # gem 'unicorn'
