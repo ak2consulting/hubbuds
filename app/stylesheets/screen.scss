@@ -4,10 +4,38 @@
 // To configure blueprint, edit the partials/base.sass file.
 @import "partials/base";
 
-// Import all the default blueprint modules so that we can access their mixins.
-@import "blueprint";
+@include sticky-footer(120px, "#container", "#containerfooter", "#footer");
 
-// Combine the partials into a single screen stylesheet.
-@import "partials/page";
-@import "partials/form";
-@import "partials/two_col";
+body.bp		{ font-size: 15px; color: $darkgray; font-family: "puritan-1","puritan-2";
+					.bold		{ font-weight: bold; }
+					h1			{ color: $darkgray; font-size: 225%; }
+					h2			{ color: $darkgray; font-size: 155%; margin-bottom: .5em; }
+					h3			{ color: $darkgray; font-size: 125%; }
+					td			{ padding: 0 0 20px 0; }
+					.clear-both { clear: both; }
+					.float-left	{ width: 850px; float: left; margin-bottom: 20px; }
+					.align-right 	{ text-align: right; }
+					.top					{ vertical-align: top; }
+					.no-padding		{ padding-bottom: 0; margin-bottom: 0; 
+						td					{ padding-bottom: 0; margin-bottom: 0; }
+					}
+					
+	#container		{ @include container; background-color: white; }
+	#header				{ padding: 4px 0; margin: 0px; }
+	#navigation		{ padding: 0 0 7px 10px; text-align: center; font-size: 110%;
+					a{ color: $red; font-weight: bold; text-decoration: none; }
+					a:hover{ color: $red; text-decoration: underline; }
+	}
+	#page			{ margin: 0; padding: 5px 0 20px 0;
+					.status-bar{ @include border-radius(14px); @include linear-gradient(color-stops(#DDD, #AAA)); padding: 20px; margin-bottom: 30px; font-size: 30px; font-weight: bold; }
+					ul.horizontal-list 	{ @include horizontal-list(10px); }
+	}	
+	#footer			{ margin-top: -120px; background-color: #333;
+		#inner-footer	{ @include container; text-align: center; font-size: 85%; padding-top: 20px; background-color: #333; color: $lightgray;
+						a{ color: $lightgray; text-decoration: none; }
+						a:hover{ color: white; text-decoration: underline; }
+						table.no-padding	{ padding: 0; margin: 0; }
+						ul.horizontal-list 	{ @include horizontal-list(10px); }
+		}
+	}
+}
