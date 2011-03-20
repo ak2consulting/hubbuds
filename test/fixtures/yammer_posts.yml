@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  yammer_id: MyString
-  user: MyString
+	yammer_id: MyString
+	user: MyString
 
 two:
-  yammer_id: MyString
-  user: MyString
+	yammer_id: MyString
+	user: MyString
