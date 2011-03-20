@@ -2,6 +2,7 @@ Hubbuds::Application.routes.draw do
 	root :to => 'github_projects#index' 
 	resources :github_projects
 
+	post "github_projects/push_update"
 	get "github_projects/scaffold"
 
 	# The priority is based upon order of creation:
