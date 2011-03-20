@@ -1,0 +1,21 @@
+<%= form_for(@github_project) do |f| %>
+	<% if @github_project.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@github_project.errors.count, "error") %> prohibited this github_project from being saved:</h2>
+
+			<ul>
+			<% @github_project.errors.full_messages.each do |msg| %>
+  			<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+		<%= f.label :url %><br />
+		<%= f.text_field :url %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

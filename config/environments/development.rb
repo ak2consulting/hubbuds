@@ -22,5 +22,8 @@ Hubbuds::Application.configure do
 
 	# Only use best-standards-support built into browsers
 	config.action_dispatch.best_standards_support = :builtin
+
+	$yammer_config={ :consumer=>{:key=>"qPwe7LO1PeG8rymSLyHMg",:secret=>"ZU45CqAx8pAz6gde1K5oTL09PS7abwzsO1LoxjFqjI8"},
+					:access=>{:token=>"NJSlP95aT9Fl3udEoQ1k9g",:secret=>"hdjvQEuermXUY6nd1FXRedfWz0TlcTzkmTHuWuv6Wg"}}
 end
 
