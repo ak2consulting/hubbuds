@@ -8,7 +8,7 @@ class GithubProjectsController < ApplicationController
 		#what to do if github project not found?
 		
 		#lovingly stolen from https://github.com/github/github-services/blob/master/services/yammer.rb
-		yammer = Yammer::Client.new(:config=>$yammer_config)
+		yammer = Yammer::Client.new($yammer_config)
 		the_update['commits'].each do |commit|
 			#TODO: LINK BACK HERE
 			body="@#{commit['author']['name']} updated #{the_update['repository']['name']}: \"#{commit['message']}\". check it out at <todo: link>"
