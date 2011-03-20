@@ -16,6 +16,10 @@ class GithubProjectsController < ApplicationController
 			posted_message = JSON.parse resp.body
 			YammerPost.create( :yammer_id=>posted_message["messages"][0]["id"], :github_project=>@github_project)
 		end
+		
+		respond_to do |f|
+			f.html {head :ok}
+		end
 	end
 	
 	# GET /github_projects
