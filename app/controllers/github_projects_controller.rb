@@ -1,7 +1,7 @@
 class GithubProjectsController < ApplicationController
 	#POST /push_update
 	def push_update
-		puts "got into update, payload= #{params[:payload]}"
+		logger.error "got into update, payload= #{params[:payload]}"
 		the_update = JSON.parse params[:payload]
 		
 		@github_project = GithubProject.find_by_url the_update['repository']['url']
@@ -12,7 +12,7 @@ class GithubProjectsController < ApplicationController
 		the_update['commits'].each do |commit|
 			#TODO: LINK BACK HERE
 			body="@#{commit['author']['name']} updated #{the_update['repository']['name']}: \"#{commit['message']}\". check it out at <todo: link>"
-			resp=yammer.message(:post, :body => status)
+			resp=yammer.message(:post, :body => body)
 			#error catch, maybe?
 			posted_message = JSON.parse resp.body
 			YammerPost.create( :yammer_id=>posted_message["messages"][0]["id"], :github_project=>@github_project)
