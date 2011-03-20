@@ -1,6 +1,8 @@
 class GithubProjectsController < ApplicationController
 	#POST /push_update
 	def push_update
+		logger.error "in update so far."
+		logger.error "params=#{params}"
 		logger.error "got into update, payload= #{params[:payload]}"
 		the_update = JSON.parse params[:payload]
 		
