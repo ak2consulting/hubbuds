@@ -10,7 +10,7 @@ class GithubProjectsController < ApplicationController
 		yammer = Yammer::Client.new($yammer_config)
 		the_update['commits'].each do |commit|
 			#TODO: LINK BACK HERE
-			body="@#{commit['author']['name']} updated #{the_update['repository']['name']}: \"#{commit['message']}\". check it out at http://hubbuds.heroku.com#{github_project_url(@github_project)}"
+			body="@#{commit['author']['name']} updated #{the_update['repository']['name']}: \"#{commit['message']}\". check it out at #{github_project_url(@github_project)}"
 			resp=yammer.message(:post, :body => body)
 			#error catch, maybe?
 			posted_message = JSON.parse resp.body
