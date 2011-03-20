@@ -3,6 +3,14 @@
 <p>
 	<b>Url:</b>
 	<%= @github_project.url %>
+	<%#maybe this can be a partial?%>
+	<br/>
+	<b>posts</b>
+	<ul>
+		<% @github_project.yammer_posts.each do |p|%>
+			<li><%= p.yammer_id %></li>
+		<%end%>
+	</ul>
 </p>
 
 

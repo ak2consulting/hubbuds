@@ -3,6 +3,7 @@
 <table>
 	<tr>
 		<th>Url</th>
+		<th>Commits</th>
 		<th></th>
 		<th></th>
 		<th></th>
@@ -11,6 +12,7 @@
 <% @github_projects.each do |github_project| %>
 	<tr>
 		<td><%= github_project.url %></td>
+		<td><%= github_project.yammer_posts.count %></td>
 		<td><%= link_to 'Show', github_project %></td>
 		<td><%= link_to 'Edit', edit_github_project_path(github_project) %></td>
 		<td><%= link_to 'Destroy', github_project, :confirm => 'Are you sure?', :method => :delete %></td>
