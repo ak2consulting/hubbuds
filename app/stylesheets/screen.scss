@@ -18,7 +18,7 @@ body.bp		{ font-size: 15px; color: $darkgray; font-family: "puritan-1","puritan-
 					.top					{ vertical-align: top; }
 					.no-padding		{ padding-bottom: 0; margin-bottom: 0; 
 						td					{ padding-bottom: 0; margin-bottom: 0; }				
-					
+					.no-link{ text-decoration: none; }
 					}
 					
 	#container		{ @include container; background-color: white; }
