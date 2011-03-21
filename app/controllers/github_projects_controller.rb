@@ -10,6 +10,7 @@ class GithubProjectsController < ApplicationController
 		yammer = Yammer::Client.new($yammer_config)
 		the_update['commits'].each do |commit|
 			#TODO: LINK BACK HERE
+			next if commit['message'] =~ /Merge branch/
 			body="@#{commit['author']['name']} updated #{the_update['repository']['name']}: \"#{commit['message']}\". check it out at #{github_project_url(@github_project)}"
 			resp=yammer.message(:post, :body => body)
 			#error catch, maybe?
