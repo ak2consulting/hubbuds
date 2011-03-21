@@ -10,7 +10,7 @@
 		<% @messages_and_replies.each do |post_list| %>
 			<div>
 			<%orig = post_list.last %>
-			Post: <%=orig.body.plain%> (liked by: <%= orig.liked_by.names.map(&:full_name)*','%>)
+			Post: <%=orig.body.plain%> <% if orig.liked_by.names.present? %>(liked by: <%= orig.liked_by.names.map(&:full_name)*','%>)<%end%>
 			<% if (post_list.length > 1)%>
 				<br/>replies:
 				<ul>
