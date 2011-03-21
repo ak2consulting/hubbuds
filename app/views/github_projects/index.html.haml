@@ -1,0 +1,6 @@
+- @github_projects.each do |github_project|
+	%a.row-block{:href=>"#{github_project_path(github_project)}"}
+		= github_project.url 
+		= github_project.yammer_posts.count 
+		
+= link_to 'New Github project', new_github_project_path 

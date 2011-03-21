@@ -17,7 +17,8 @@ body.bp		{ font-size: 15px; color: $darkgray; font-family: "puritan-1","puritan-
 					.align-right 	{ text-align: right; }
 					.top					{ vertical-align: top; }
 					.no-padding		{ padding-bottom: 0; margin-bottom: 0; 
-						td					{ padding-bottom: 0; margin-bottom: 0; }
+						td					{ padding-bottom: 0; margin-bottom: 0; }				
+					
 					}
 					
 	#container		{ @include container; background-color: white; }
@@ -26,8 +27,11 @@ body.bp		{ font-size: 15px; color: $darkgray; font-family: "puritan-1","puritan-
 					a{ color: $red; font-weight: bold; text-decoration: none; }
 					a:hover{ color: $red; text-decoration: underline; }
 	}
-	#page			{ margin: 0; padding: 5px 0 20px 0;
-					.status-bar{ @include border-radius(14px); @include linear-gradient(color-stops(#DDD, #AAA)); padding: 20px; margin-bottom: 30px; font-size: 30px; font-weight: bold; }
+	#page{ margin: 0; padding: 5px 0 20px 0;
+					.status-bar{ @include border-radius(14px); @include linear-gradient(color-stops(#DDD, #AAA)); padding: 20px; margin-bottom: 20px; font-size: 20px; font-weight: bold; color: black; display: block; }
+					a.row-block{ display: block; position: relative; @include border-radius(14px); @include linear-gradient(color-stops(#DDD, #AAA)); margin-bottom: 12px; padding: 20px; border: solid 2px #AAA; }
+		      a.row-block:hover{ display: block; border: solid 2px $blue; color: white; }
+		      a.row-block:active{ display: block; border: solid 2px $blue; color: white; }
 					ul.horizontal-list 	{ @include horizontal-list(10px); }
 	}	
 	#footer			{ margin-top: -120px; background-color: #333;
