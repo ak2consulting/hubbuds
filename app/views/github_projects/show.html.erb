@@ -6,11 +6,22 @@
 	<%#maybe this can be a partial?%>
 	<br/>
 	<b>posts</b>
-	<ul>
-		<% @messages_and_replies.flatten.each do |post| %>
-			<li><%= post.body.plain %> (liked by: <%= post.liked_by.names.map(&:full_name)*','%>)</li>
+	<div>
+		<% @messages_and_replies.each do |post_list| %>
+			<div>
+			<%orig = post_list.last %>
+			Post: <%=orig.body.plain%> (liked by: <%= orig.liked_by.names.map(&:full_name)*','%>)
+			<% if (post_list.length > 1)%>
+				<br/>replies:
+				<ul>
+				<% post_list[0..-2].each do |reply| %>
+					<li><%= reply.body.plain %></li>
+				<%end%>
+				</ul>
+			<%end%>
+			</div>
 		<%end%>
-	</ul>
+	</div>
 </p>
 
 
