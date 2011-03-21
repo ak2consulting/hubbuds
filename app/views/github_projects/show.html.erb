@@ -3,23 +3,24 @@
 <p>
 	<h1><%= @github_project.name %></h1>
 	<%#maybe this can be a partial?%>
-	<h2>Comments</h2>
-	<div>
+	<h2>Commits</h2>
+	<table>
 		<% @messages_and_replies.each do |post_list| %>
-			<div>
-			<%orig = post_list.last %>
-			Post: <%=orig.body.plain%> (liked by: <%= orig.liked_by.names.map(&:full_name)*','%>)
-			<% if (post_list.length > 1)%>
-				<br/>replies:
-				<ul>
-				<% post_list[0..-2].each do |reply| %>
-					<li><%= reply.body.plain %></li>
-				<%end%>
-				</ul>
-			<%end%>
-			</div>
+			<tr>
+				<td>
+					<%orig = post_list.last %>
+					Post: <%=orig.body.plain%> (liked by: <%= orig.liked_by.names.map(&:full_name)*','%>)
+				</td>
+				<td><b>Comments</b>
+					<ul>
+						<% post_list[0..-2].each do |reply| %>
+							<li><%= reply.body.plain %></li>
+						<%end%>
+					</ul>
+				</td>
+			</tr>
 		<%end%>
-	</div>
+	</table>
 </p>
 
 
