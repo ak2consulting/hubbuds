@@ -13,19 +13,19 @@
 ActiveRecord::Schema.define(:version => 20110321002033) do
 
   create_table "github_projects", :force => true do |t|
-    t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.text     "description"
+    t.string    "url"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "name"
+    t.text      "description"
   end
 
   create_table "yammer_posts", :force => true do |t|
-    t.string   "yammer_id"
-    t.string   "user"
-    t.integer  "github_project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "yammer_id"
+    t.string    "user"
+    t.integer   "github_project_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
 end
