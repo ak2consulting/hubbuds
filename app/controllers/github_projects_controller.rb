@@ -37,6 +37,8 @@ class GithubProjectsController < ApplicationController
 	# GET /github_projects/1.xml
 	def show
 		@github_project = GithubProject.find(params[:id])
+		yammer = Yammer::Client.new($yammer_config)
+		@messages_and_replies = @github_project.yammer_posts.order(:created_at=>"desc").limit(3).map {|p|  yammer.messages(:in_thread,:id=>p.yammer_id)}
 
 		respond_to do |format|
 			format.html # show.html.erb

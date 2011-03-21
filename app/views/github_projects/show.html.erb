@@ -7,8 +7,8 @@
 	<br/>
 	<b>posts</b>
 	<ul>
-		<% @github_project.yammer_posts.each do |p|%>
-			<li><%= p.yammer_id %></li>
+		<% @messages_and_replies.flatten.each do |post| %>
+			<li><%= post.body.plain %> (liked by: <%= post.liked_by.names.map(&:full_name)*','%>)</li>
 		<%end%>
 	</ul>
 </p>
