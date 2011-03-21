@@ -572,7 +572,7 @@ html, body {
 /* line 9, ../../../app/stylesheets/screen.scss */
 body.bp {
   font-size: 15px;
-  color: black;
+  color: #555555;
   font-family: "puritan-1","puritan-2";
 }
 /* line 10, ../../../app/stylesheets/screen.scss */
@@ -627,7 +627,7 @@ body.bp .no-padding td {
   padding-bottom: 0;
   margin-bottom: 0;
 }
-/* line 23, ../../../app/stylesheets/screen.scss */
+/* line 24, ../../../app/stylesheets/screen.scss */
 body.bp #container {
   width: 950px;
   margin: 0 auto;
@@ -635,34 +635,34 @@ body.bp #container {
   *zoom: 1;
   background-color: white;
 }
-/* line 24, ../../../app/stylesheets/screen.scss */
+/* line 25, ../../../app/stylesheets/screen.scss */
 body.bp #header {
   padding: 4px 0;
   margin: 0px;
 }
-/* line 25, ../../../app/stylesheets/screen.scss */
+/* line 26, ../../../app/stylesheets/screen.scss */
 body.bp #navigation {
   padding: 0 0 7px 10px;
   text-align: center;
   font-size: 110%;
 }
-/* line 26, ../../../app/stylesheets/screen.scss */
+/* line 27, ../../../app/stylesheets/screen.scss */
 body.bp #navigation a {
   color: #bd0303;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 27, ../../../app/stylesheets/screen.scss */
+/* line 28, ../../../app/stylesheets/screen.scss */
 body.bp #navigation a:hover {
   color: #bd0303;
   text-decoration: underline;
 }
-/* line 29, ../../../app/stylesheets/screen.scss */
+/* line 30, ../../../app/stylesheets/screen.scss */
 body.bp #page {
   margin: 0;
   padding: 5px 0 20px 0;
 }
-/* line 30, ../../../app/stylesheets/screen.scss */
+/* line 31, ../../../app/stylesheets/screen.scss */
 body.bp #page .status-bar {
   -moz-border-radius: 14px;
   -webkit-border-radius: 14px;
@@ -674,11 +674,42 @@ body.bp #page .status-bar {
   background-image: -moz-linear-gradient(top, #dddddd 0%, #aaaaaa 100%);
   background-image: linear-gradient(top, #dddddd 0%, #aaaaaa 100%);
   padding: 20px;
-  margin-bottom: 30px;
-  font-size: 30px;
+  margin-bottom: 20px;
+  font-size: 20px;
   font-weight: bold;
+  color: black;
+  display: block;
 }
-/* line 31, ../../../app/stylesheets/screen.scss */
+/* line 32, ../../../app/stylesheets/screen.scss */
+body.bp #page a.row-block {
+  display: block;
+  position: relative;
+  -moz-border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -o-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -khtml-border-radius: 14px;
+  border-radius: 14px;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #dddddd), color-stop(100%, #aaaaaa));
+  background-image: -moz-linear-gradient(top, #dddddd 0%, #aaaaaa 100%);
+  background-image: linear-gradient(top, #dddddd 0%, #aaaaaa 100%);
+  margin-bottom: 12px;
+  padding: 20px;
+  border: solid 2px #AAA;
+}
+/* line 33, ../../../app/stylesheets/screen.scss */
+body.bp #page a.row-block:hover {
+  display: block;
+  border: solid 2px #5092bd;
+  color: white;
+}
+/* line 34, ../../../app/stylesheets/screen.scss */
+body.bp #page a.row-block:active {
+  display: block;
+  border: solid 2px #5092bd;
+  color: white;
+}
+/* line 35, ../../../app/stylesheets/screen.scss */
 body.bp #page ul.horizontal-list {
   margin: 0;
   padding: 0;
@@ -706,12 +737,12 @@ body.bp #page ul.horizontal-list li:first-child, body.bp #page ul.horizontal-lis
 body.bp #page ul.horizontal-list li:last-child, body.bp #page ul.horizontal-list li.last {
   padding-right: 0;
 }
-/* line 33, ../../../app/stylesheets/screen.scss */
+/* line 37, ../../../app/stylesheets/screen.scss */
 body.bp #footer {
   margin-top: -120px;
   background-color: #333;
 }
-/* line 34, ../../../app/stylesheets/screen.scss */
+/* line 38, ../../../app/stylesheets/screen.scss */
 body.bp #footer #inner-footer {
   width: 950px;
   margin: 0 auto;
@@ -723,22 +754,22 @@ body.bp #footer #inner-footer {
   background-color: #333;
   color: #bbbbbb;
 }
-/* line 35, ../../../app/stylesheets/screen.scss */
+/* line 39, ../../../app/stylesheets/screen.scss */
 body.bp #footer #inner-footer a {
   color: #bbbbbb;
   text-decoration: none;
 }
-/* line 36, ../../../app/stylesheets/screen.scss */
+/* line 40, ../../../app/stylesheets/screen.scss */
 body.bp #footer #inner-footer a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 37, ../../../app/stylesheets/screen.scss */
+/* line 41, ../../../app/stylesheets/screen.scss */
 body.bp #footer #inner-footer table.no-padding {
   padding: 0;
   margin: 0;
 }
-/* line 38, ../../../app/stylesheets/screen.scss */
+/* line 42, ../../../app/stylesheets/screen.scss */
 body.bp #footer #inner-footer ul.horizontal-list {
   margin: 0;
   padding: 0;
