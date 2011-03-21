@@ -7,7 +7,7 @@
 	<table>
 		<% @messages_and_replies.each do |post_list| %>
 			<tr>
-				<td>
+				<td width="400px">
 					<%orig = post_list.last %>
 					Post: <%=orig.body.plain%> <% if orig.liked_by.names.present?%>(liked by: <%= orig.liked_by.names.map(&:full_name)*','%>)<%end%>
 				</td>
