@@ -627,6 +627,10 @@ body.bp .no-padding td {
   padding-bottom: 0;
   margin-bottom: 0;
 }
+/* line 21, ../../../app/stylesheets/screen.scss */
+body.bp .no-padding .no-link {
+  text-decoration: none;
+}
 /* line 24, ../../../app/stylesheets/screen.scss */
 body.bp #container {
   width: 950px;
